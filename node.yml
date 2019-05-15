@@ -95,15 +95,15 @@ resources:
             str_replace:
               template: |
                 #!/bin/bash
-                mkdir /tmp/wp
-                cat <<'EOF' > /tmp/wp/ami.yml
+                mkdir /tmp/nodejs
+                cat <<'EOF' > /tmp/nodejs/ami.yml
                 yum:
                   hosts: all
                   roles:
                     - commons
                     - node
                 EOF
-                cd /tmp/wp
+                cd /tmp/nodejs
                 ami playbook configure
                 ami playbook start
                 reboot
